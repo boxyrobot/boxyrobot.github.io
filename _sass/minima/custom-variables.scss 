@@ -1,0 +1,2 @@
+// Overriding predefined variables.
+$base-font-family: "Lato", sans-serif !default;
