@@ -19,23 +19,31 @@
 # in the templates via {{ site.myvariable }}.
 
 title: All My Circuits
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  boxyrobot
+author:
+  name: Jevgeni Mullo
+description: >-
+  Obsolete hardware meets modern-day software.
+  Also, notes to my future self.
+baseurl: ""
+url: "https://allmycircuits.eu"
 
 # Build settings
-# TODO: pin to a particular commit https://github.com/jekyll/minima/issues/411#issuecomment-730711365
-remote_theme: jekyll/minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
+# Theme
+remote_theme: jekyll/minima@41b97699af658128fa9983e5312ca5516641f335
 minima:
   skin: auto
+  social_links:
+    github: boxyrobot
+
+# Reading cadence for page read time calculation
+words_per_minute: 180
+
+# Strip dates from permalinks
+permalink: /:categories/:title/
 
 show_excerpts: true
 
@@ -58,3 +66,11 @@ show_excerpts: true
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Relocate pages from the site root
+include:
+  - _pages
+
+# Exclude any markdown files left in the site root
+exclude:
+  - README.md
